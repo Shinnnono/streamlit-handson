@@ -7,7 +7,7 @@ task = st.text_input("タスクを入力")
 
 if st.button("追加"):
    st.write(f"{task}")
-tasks = [] // task = st.text_input("タスクを入力")の行に上書き
+st.session_state.tasks = []
 
 #step2:リストに入力
 task = st.text_input("タスクを入力")
@@ -17,3 +17,14 @@ if st.button("追加"):
 
 st.write("### タスク一覧")
 st.write(tasks)
+
+#step3:session_stateを追加
+if "tasks" not in st.session_state:
+   st.session_state.tasks = []
+
+task = st.text_input("タスクを入力")
+if st.button("追加"):
+   st.session_state.tasks.append(task)
+
+st.write("### タスク一覧")
+st.write(st.session_state.tasks)
