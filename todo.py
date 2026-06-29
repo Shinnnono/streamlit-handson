@@ -12,7 +12,7 @@ st.session_state.tasks = []
 #step2:リストに入力
 task = st.text_input("タスクを入力")
 if st.button("追加"):
-   tasks.append(task) // append()はリストに値を追加する関数
+   tasks.append(task) 
    st.write(f"{task}")
 
 st.write("### タスク一覧")
